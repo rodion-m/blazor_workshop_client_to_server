@@ -25,7 +25,6 @@ namespace BlazorWorkshop2021.Custom
 
         public bool TryParseMessage(ref ReadOnlySequence<byte> input, IInvocationBinder binder, out HubMessage? message)
         {
-            var str = Encoding.UTF8.GetString(input.ToArray());
             var result = _base.TryParseMessage(ref input, binder, out message);
             _logger.LogWarning("IN: {@Message}", message);
             return result;
